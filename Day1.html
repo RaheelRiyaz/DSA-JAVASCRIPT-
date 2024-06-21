@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Day 1 (Deletion of element from an array)</title>
+  </head>
+  <body>
+    <script>
+      const array = [1, 2, 3, 5, 7, 9, 0];
+      const i = array.indexOf(5);
+
+      for (let index = i; index < array.length; index++) {
+        array[index] = array[index + 1];
+      }
+      array.length = array.length - 1;
+      console.log(array);
+
+      const list = [
+        {
+          id: 1,
+          name: "Raheel",
+        },
+        {
+          id: 2,
+          name: "Burhan",
+        },
+        {
+          id: 3,
+          name: "Moomin",
+        },
+      ];
+
+      Array.prototype.remove = function (obj) {
+        const i = list.indexOf(obj);
+        if (i < 0) return;
+        for (let index = i; index < this.length; index++) {
+          this[index] = this[index + 1];
+        }
+        this.length = this.length - 1;
+      };
+
+      const obj = list.find((_) => _.id == 1);
+      list.remove(obj);
+      console.log(list);
+    </script>
+  </body>
+</html>
