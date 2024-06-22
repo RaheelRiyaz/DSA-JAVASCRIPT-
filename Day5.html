@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 (Merge tow arrays into third array using while loop)</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3, 4, 5];
+      const array2 = [6, 7, 8, 9];
+      const resultArray = [];
+      let firstArrayIndex = -1;
+      let secondArrayIndex = -1;
+      while (
+        firstArrayIndex < array1.length - 1 ||
+        secondArrayIndex < array2.length - 1
+      ) {
+        if (firstArrayIndex !== array1.length - 1) {
+          firstArrayIndex++;
+          resultArray.push(array1[firstArrayIndex]);
+        } else {
+          secondArrayIndex++;
+          resultArray.push(array2[secondArrayIndex]);
+        }
+      }
+      console.log(resultArray);
+      console.log("completed", firstArrayIndex);
+
+      console.log("Merge arrays logic ////");
+      function mergeArrays(...arrays) {
+        const resultArray = [];
+        for (let index = 0; index < arrays.length; index++) {
+          for (let i = 0; i < arrays[index].length; i++) {
+            resultArray.push(arrays[index][i]);
+          }
+        }
+        return resultArray;
+      }
+      const meregdArrays = mergeArrays([1, 2], [3, 4], [5, 6], [7, 8, 9]);
+      console.log(meregdArrays);
+      
+    </script>
+  </body>
+</html>

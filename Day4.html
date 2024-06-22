@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 (Merge two arrays in a third array)</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3, 4, 5];
+      const array2 = [6, 7, 8, 9];
+      const resultArray = [];
+
+      // Manually
+      for (let index = 0; index < array1.length; index++) {
+        resultArray.push(array1[index]);
+      }
+      for (let index = 0; index < array2.length; index++) {
+        resultArray.push(array2[index]);
+      }
+
+      console.log(resultArray);
+
+      //Using spread operators
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [6, 7, 8, 9];
+      const resultingArray = [...arr1, ...arr2];
+      console.log(resultingArray);
+    </script>
+  </body>
+</html>
